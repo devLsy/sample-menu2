@@ -12,7 +12,7 @@
         FROM dep
         START WITH parent_cd IS NULL
         CONNECT BY PRIOR dep_cd = parent_cd
-        ORDER SIBLINGS BY parent_cd
+        ORDER SIBLINGS BY dep_cd
     </select>
 
 </mapper>
