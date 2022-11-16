@@ -1,0 +1,15 @@
+spring:
+  datasource:
+#    url: jdbc:log4jdbc:h2:tcp://localhost/~/lsy;MODE=mySQL
+#    url: jdbc:log4jdbc:oracle:thin:@localhost:1521:ORCL
+    url: jdbc:log4jdbc:oracle:thin:@localhost:1521:ORCL
+    username: system
+    password: Xpfks86$
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+server:
+  port: 9000
+
+mybatis:
+  mapper-locations: mybatis-mapper/**/*.xml
+
