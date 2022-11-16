@@ -5,7 +5,14 @@
 <mapper namespace="study.samplemenu2.mapper.MenuMapper">
 
     <select id="findList" resultType="hashmap">
-        SELECT * FROM dep
+        SELECT dep_cd,
+               parent_cd,
+               LPAD(' ', 3*(LEVEL-1)) || DEPT_NAME AS dept_name,
+               level
+        FROM dep
+        START WITH parent_cd IS NULL
+        CONNECT BY PRIOR dep_cd = parent_cd
+        ORDER SIBLINGS BY parent_cd
     </select>
 
 </mapper>

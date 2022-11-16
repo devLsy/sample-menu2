@@ -13,5 +13,8 @@
 </head>
 <body>
 <h2>menuList</h2>
+<ul class="list-unstyled" th:each=" item : ${list}">
+    <li th:text="${item}"></li>
+</ul>
 </body>
 </html>
