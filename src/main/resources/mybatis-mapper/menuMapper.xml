@@ -8,12 +8,14 @@
     <result column="parent_cd" property="parentCd"/>
     <result column="dept_name" property="deptName"/>
     <result column="level" property="level"/>
+    <result column="dept_email" property="deptEmail"/>
 </resultMap>
 
     <select id="findList" resultMap="resultMap">
         SELECT dep_cd,
                parent_cd,
                LPAD(' ', 3*(LEVEL-1)) || DEPT_NAME AS dept_name,
+               dept_email,
                level
         FROM dep
         START WITH parent_cd IS NULL

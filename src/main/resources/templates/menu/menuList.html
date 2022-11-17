@@ -21,21 +21,18 @@
             <th>부모코드</th>
             <th>부서명</th>
             <th>레벨</th>
+            <th>이메일</th>
+        </tr>
+        <tr th:each="item : ${list}">
+            <td th:text="${item[depCd]}"/>
+            <td th:text="${item[parentCd]}"/>
+            <td th:text="${item[deptName]}"/>
+            <td th:text="${item[level]}"/>
+            <td th:text="${item[deptEmail]}"/>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="item : ${list}">
-<!--            되는 코드 -->
-            <td th:text="${item['depCd']}"/>
-            <td th:text="${item['parentCd']}"/>
-            <td th:text="${item['deptName']}"/>
-            <td th:text="${item['level']}"/>
-            <!--            에러나는 코드
-            Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'parentCd' cannot be found on object of type 'java.util.HashMap' - maybe not public or not valid?
-            getter가 선언안되어 있어서 그렇다는데.. map으로 받았는데.. 구글링 하다가 위로 코드 변경해서 해결함
-            -->
-<!--            <td th:text="${item.parentCd}"/>-->
-        </tr>
+
         </tbody>
     </table>
 </div>

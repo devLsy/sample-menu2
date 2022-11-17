@@ -7,5 +7,5 @@ import java.util.Map;
 
 @Mapper
 public interface MenuMapper {
-    List<Map<String, Object>> findList();
+    public List<Map<String, Object>> findList();
 }

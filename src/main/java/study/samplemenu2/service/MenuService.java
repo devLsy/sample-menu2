@@ -15,8 +15,7 @@ import java.util.Map;
 public class MenuService {
     private final MenuMapper menuMapper;
 
-    public List<Map<String, Object>> findList() throws Exception{
+    public List<Map<String, Object>> findList() {
         return menuMapper.findList();
     }
-
 }
