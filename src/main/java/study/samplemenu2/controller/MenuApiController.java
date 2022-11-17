@@ -21,7 +21,7 @@ public class MenuApiController {
     public Map<String, Object> menuList() throws Exception {
         Map<String, Object> map = new HashMap<>();
         List<Map<String, Object>> list = menuService.findList();
-        map.put("lis", list);
+        map.put("list", list);
         return map;
     }
 }
