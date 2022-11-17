@@ -25,6 +25,13 @@ class MenuServiceTest {
         //given
         List<Map<String, Object>> list = menuService.findList();
         // when
+        for (Map<String, Object> stringObjectMap : list) {
+            System.out.println("depCd = " + stringObjectMap.get("depCd"));
+            System.out.println("===================================================");
+            System.out.println("parentCd = " + stringObjectMap.get("parentCd"));
+            System.out.println("===================================================");
+            System.out.println("deptName = " + stringObjectMap.get("deptName"));
+        }
 
         //then
     }

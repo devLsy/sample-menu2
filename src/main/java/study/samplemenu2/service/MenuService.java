@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import study.samplemenu2.mapper.MenuMapper;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ import java.util.Map;
 public class MenuService {
     private final MenuMapper menuMapper;
 
-    public List<Map<String, Object>> findList() {
+    public List<Map<String, Object>> findList() throws Exception{
         return menuMapper.findList();
     }
 

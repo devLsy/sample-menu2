@@ -12,9 +12,57 @@
     <title>menuList</title>
 </head>
 <body>
-<h2>menuList</h2>
-<ul class="list-unstyled" th:each=" item : ${list}">
-    <li th:text="${item}"></li>
-</ul>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>부서번호</th>
+            <th>부모코드</th>
+            <th>부서명</th>
+            <th>레벨</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${list}">
+<!--            되는 코드 -->
+            <td th:text="${item['depCd']}"/>
+            <td th:text="${item['parentCd']}"/>
+            <td th:text="${item['deptName']}"/>
+            <td th:text="${item['level']}"/>
+            <td th:text="${item.depCd}"/>
+            <!--            에러나는 코드
+            Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'parentCd' cannot be found on object of type 'java.util.HashMap' - maybe not public or not valid?
+            getter가 선언안되어 있어서 그렇다는데.. map으로 받았는데.. 구글링 하다가 위로 코드 변경해서 해결함
+            -->
+<!--            <td th:text="${item.parentCd}"/>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // menuList();
+    });
+
+    // function menuList() {
+    //     console.log("menuList");
+    //     $.ajax({
+    //         url: '/api/menu/list',
+    //         type: 'get',
+    //         dataType: 'json',
+    //         success: function (data) {
+    //             $.each(data, function () {
+    //                 console.log(data.map);
+    //             });
+    //
+    //         }
+    //     });
+    // }
+
+
+</script>
+
 </body>
 </html>

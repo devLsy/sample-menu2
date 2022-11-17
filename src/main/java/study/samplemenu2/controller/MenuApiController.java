@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import study.samplemenu2.service.MenuService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,8 +18,10 @@ public class MenuApiController {
     private final MenuService menuService;
 
     @GetMapping("/api/menu/list")
-    public List<Map<String, Object>> menuList() {
+    public Map<String, Object> menuList() throws Exception {
+        Map<String, Object> map = new HashMap<>();
         List<Map<String, Object>> list = menuService.findList();
-        return list;
+        map.put("lis", list);
+        return map;
     }
 }
